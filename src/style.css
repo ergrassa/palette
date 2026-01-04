@@ -247,3 +247,76 @@ hr {
   font-weight: normal;
   font-display: swap;
 }
+
+/* ---------- Mobile tuning (does not affect desktop) ---------- */
+@media (max-width: 520px) {
+  #app {
+    padding: 6px;
+  }
+
+  .panel {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .panel h2 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  /* Make controls truly single-column on phones */
+  .controls-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Ignore span-* on mobile to avoid weird gaps */
+  .span-1,
+  .span-2,
+  .span-3,
+  .span-4 {
+    grid-column: span 1;
+  }
+
+  label {
+    gap: 6px;
+  }
+
+  input[type='text'],
+  input[type='number'],
+  select,
+  button {
+    font-size: 14px;
+  }
+
+  input[type='text'],
+  input[type='number'],
+  select {
+    height: 36px;
+    min-height: 36px;
+    line-height: 34px;
+  }
+
+  button {
+    height: 36px;
+  }
+
+  hr {
+    margin: 10px 0;
+  }
+
+  .small {
+    font-size: 12px;
+  }
+
+  /* Palette: allow horizontal scroll instead of breaking layout */
+  .palette {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+:root {
+  line-height: 1.2;
+}
