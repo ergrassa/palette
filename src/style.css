@@ -1,0 +1,249 @@
+:root {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+  line-height: 1.0;
+  color: #111;
+  background: #f6f6f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.04);
+}
+
+.panel h2 {
+  margin: 0 0 10px 0;
+  font-size: smaller;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.row-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+input[type='text'],
+input[type='number'],
+select {
+  height: 34px;
+  min-height: 34px;
+  line-height: 32px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0 10px;
+  outline: none;
+  font-size: medium;
+  background: #fff;
+}
+
+input,
+select,
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+}
+
+input[type='color'] {
+  height: 34px;
+  min-height: 34px;
+  width: 100%;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+  border: none;
+  border-radius: 6px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+button {
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f4f4f5;
+  cursor: pointer;
+  font-size: medium;
+}
+
+button:hover {
+  background: #ededf0;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.small {
+  font-size: small;
+  color: #555;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 12px 0;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(var(--row-len), var(--sw-w));
+  grid-auto-rows: var(--sw-h);
+  column-gap: var(--gap-h);
+  row-gap: var(--gap-v);
+  padding: 6px;
+  background: #fff;
+  border: 1px dashed #d0d0d0;
+  border-radius: 12px;
+  min-height: 120px;
+}
+
+.swatch {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.swatch .name {
+  position: absolute;
+  left: 2px;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: small;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.swatch .del {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 6px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.75);
+  color: #111;
+  cursor: pointer;
+  line-height: 16px;
+  font-size: small;
+  padding: 0;
+}
+
+.swatch .del:hover {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.span-1 { grid-column: span 1; }
+.span-2 { grid-column: span 2; }
+.span-3 { grid-column: span 3; }
+.span-4 { grid-column: span 4; }
+
+.btn-reset {
+  border-color: #d4a11e;
+  background: #fff7db;
+}
+
+.btn-reset:hover {
+  background: #fff1c2;
+}
+
+@media (max-width: 900px) {
+  .controls-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .span-3, .span-4 { grid-column: span 2; }
+}
+
+@font-face {
+  font-family: 'Jersey 10';
+  src: url('./assets/fonts/Jersey10-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pixelify Sans';
+  src: url('./assets/fonts/PixelifySans-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiny5';
+  src: url('./assets/fonts/Tiny5-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
