@@ -6,7 +6,7 @@ services:
       - VIRTUAL_HOST=palette.zerog.cc
       - LETSENCRYPT_HOST=palette.zerog.cc
       - LETSENCRYPT_EMAIL=uzuri@zerog.cc
-      - VIRTUAL_PORT=8080
+      - VIRTUAL_PORT=80
     networks:
       - proxy
 
